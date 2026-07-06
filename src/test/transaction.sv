@@ -24,10 +24,4 @@ class transaction;
 	  {write_en, read_en} dist {0 := 10, 2 := 40, 1 := 40, 3 := 10};
 	}
 	
-	/*constraint rule2{
-	  if(read_en == 1){
-	    data_in == 0;
-	  }
-	}*/
-	
 endclass
