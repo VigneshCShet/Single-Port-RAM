@@ -1,0 +1,7 @@
+var g_db_data = [
+{dummy:0},
+{name:'drv_cg',f:1,type:6,id:122,tb:'9',h:'9',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/ram_pkg/driver',parent:'120'},
+{name:'mon_cg',f:1,type:6,id:132,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','auto(true)']],hdlPath:'/ram_pkg/monitor',parent:'130'},
+{name:'drv_cg',f:1,type:6,id:221,tb:'9',h:'9',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],hdlPath:'work.ram_pkg::driver',parent:'219'},
+{name:'mon_cg',f:1,type:6,id:231,tb:'1',h:'1',m:'0',hp:'100.00%',cov:['100.00%','G'],g:'100.00%',gp:['100.00%','G'],opts:[[],['merge_instance','true']],hdlPath:'work.ram_pkg::monitor',parent:'229'}];
+processConsCovergroupsData(g_db_data);
