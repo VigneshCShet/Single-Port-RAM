@@ -42,7 +42,7 @@ class driver;
 	  for(int i = 0; i < `num_case; i++) begin
 	    //d_tx = new();
 		  gen2drv.get(d_tx);
-			repeat(1) @(vinf.dr_cb);
+			//repeat(1) @(vinf.dr_cb);
 			
 			if(vinf.dr_cb.reset == 0) begin
 				vinf.dr_cb.data_in  <= 8'bz;
@@ -50,9 +50,8 @@ class driver;
 				vinf.dr_cb.read_en  <= 0;
 				vinf.dr_cb.address  <= 0;
 				
-				repeat(1) @(vinf.dr_cb);
 				$display("\n \nDriving inputs during reset at time %0t Test ID: %0d: data_in = %0d | address = %0d | write_en = %0d | read_en = %0d", $time,  i, d_tx.data_in, d_tx.address, d_tx.write_en, d_tx.read_en);
-			  drv2scr.put(d_tx.copy());
+			  
 			end
 			
 			else begin
@@ -63,10 +62,10 @@ class driver;
 		
 				
 				$display("\n \nDriving inputs at time %0t Test ID %0d: data_in = %0d | address = %0d | write_en = %0d | read_en = %0d", $time, i, d_tx.data_in, d_tx.address, d_tx.write_en, d_tx.read_en);
-			  drv2scr.put(d_tx.copy());
-			  repeat(1) @(vinf.dr_cb);
-			  drv_cg.sample();
 			end
+			drv2scr.put(d_tx.copy());
+			drv_cg.sample();
+			repeat(1) @(vinf.dr_cb);
 		end
 	endtask
 endclass

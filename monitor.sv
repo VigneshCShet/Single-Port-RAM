@@ -21,14 +21,14 @@ class monitor;
 	  repeat(4)@(m_vif.mn_cb);
 	  for(int i = 0; i < `num_case; i++) begin
 	  
-		  repeat(2) @(m_vif.mn_cb);
+		  
 		  m_tx.data_out = m_vif.mn_cb.data_out;
 		  
 		  //@(m_vif.mn_cb);
 		  $display("%m Test ID: %0d Monitor Putting dut out: %0d into mailbox at time %0t", i, m_tx.data_out, $time);
 			mon2scrb.put(m_tx.copy());
 			mon_cg.sample();
-			
+			repeat(1)@(m_vif.mn_cb);
 		end
 	endtask
 endclass
